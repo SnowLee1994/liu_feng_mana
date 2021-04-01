@@ -1,11 +1,12 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
-import { AuthenticationService } from '../../../core/services/auth.service';
-import { environment } from '../../../../environments/environment';
-import { first } from 'rxjs/operators';
-import { UserProfileService } from '../../../core/services/user.service';
+import {AuthenticationService} from '../../../core/services/auth.service';
+import {delay} from 'rxjs/operators';
+import {UserProfileService} from '../../../core/services/user.service';
+import {UserService} from '../../../pages/base/user/user.service';
+import {RouterService} from '../../../shared/service/router.service';
 
 @Component({
   selector: 'app-signup',
@@ -19,12 +20,14 @@ export class SignupComponent implements OnInit, AfterViewInit {
   error = '';
   successmsg = false;
 
-  // set the currenr year
-  year: number = new Date().getFullYear();
-
-  // tslint:disable-next-line: max-line-length
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService,
-              private userService: UserProfileService) { }
+  constructor(private formBuilder: FormBuilder,
+              private route: ActivatedRoute,
+              private router: Router,
+              private authenticationService: AuthenticationService,
+              private userSV: UserProfileService,
+              private userService: UserService,
+              private routerSV: RouterService) {
+  }
 
   ngOnInit() {
     document.body.removeAttribute('data-layout');
@@ -40,43 +43,27 @@ export class SignupComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
   }
 
-  // convenience getter for easy access to form fields
-  get f() { return this.signupForm.controls; }
+  get f() {
+    return this.signupForm.controls;
+  }
 
-  /**
-   * On submit form
-   */
   onSubmit() {
     this.submitted = true;
-
-    // stop here if form is invalid
     if (this.signupForm.invalid) {
       return;
     } else {
-      if (environment.defaultauth === 'firebase') {
-        this.authenticationService.register(this.f.email.value, this.f.password.value).then((res: any) => {
-          this.successmsg = true;
-          if (this.successmsg) {
-            this.router.navigate(['/']);
+      this.userService.register(this.signupForm.value).pipe(delay(1000)).subscribe(
+        r => {
+          if (r.success) {
+            this.successmsg = true;
+            this.routerSV.to('/account/login');
+          } else {
+            alert('注册失败:' + r.msg);
           }
-        })
-          .catch(error => {
-            this.error = error ? error : '';
-          });
-      } else {
-        this.userService.register(this.signupForm.value)
-          .pipe(first())
-          .subscribe(
-            data => {
-              this.successmsg = true;
-              if (this.successmsg) {
-                this.router.navigate(['/account/login']);
-              }
-            },
-            error => {
-              this.error = error ? error : '';
-            });
-      }
+        },
+        error => {
+          this.error = error ? error : '';
+        });
     }
   }
 }

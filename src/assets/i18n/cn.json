@@ -1,0 +1,238 @@
+{
+  "HEADER": {
+    "SEARCH": "搜索...",
+    "MEGA_MENU": "超级菜单",
+    "NOTIFICATIONS": {
+      "TITLE": "通知",
+      "VIEW_ALL": "全屏",
+      "LOAD_MORE": "明细..",
+      "FIRST": {
+        "TITLE": "Your order is placed",
+        "TEXT": "If several languages coalesce the grammar",
+        "TIME": "3分钟前"
+      },
+      "SECOND": {
+        "TITLE": "James Lemire",
+        "TEXT": "It will seem like simplified English.",
+        "TIME": "1 hours ago"
+      },
+      "THIRD": {
+        "TITLE": "Your item is shipped",
+        "TEXT": "If several languages coalesce the grammar",
+        "TIME": "3 min ago"
+      },
+      "FOUR": {
+        "TITLE": "Salena Layfield",
+        "TEXT": "As a skeptical Cambridge friend of mine occidental.",
+        "TIME": "1 hours ago"
+      }
+    },
+    "SETTINGS": "Settings",
+    "UI": {
+      "TITLE": "UI Components",
+      "LIGHTBOX": "LightBox",
+      "RANGE_SLIDER": "Range Slider",
+      "SWEET_ALERT": "Sweet Alert",
+      "RATING": "Rating",
+      "FORMS": "Forms",
+      "TABLES": "Tables",
+      "CHARTS": "Charts"
+    },
+    "APPLICATIONS": {
+      "TITLE": "应用",
+      "ECOMMERCE": "商业",
+      "CALENDAR": "日历",
+      "EMAIL": "Email",
+      "PROJECTS": "项目",
+      "TASKS": "任务",
+      "CONTACTS": "Contacts"
+    },
+    "EXTRA_PAGES": {
+      "TITLE": "更多页面",
+      "LIGHT_SIDEBAR": "Light Sidebar",
+      "COMPACT_SIDEBAR": "Compact Sidebar",
+      "HORIZONTAL_LAYOUT": "Horizontal layout",
+      "MAINTENANCE": "Maintenance",
+      "COMING SOON": "Coming Soon",
+      "TIMELINE": "Timeline",
+      "FAQ": "FAQs"
+    },
+    "LOGIN": {
+      "PROFILE": "个人中心",
+      "MY_WALLET": "钱包",
+      "SETTINGS": "设置",
+      "LOCK_SCREEN": "锁屏",
+      "LOGOUT": "注销"
+    }
+  },
+  "MENUITEMS": {
+    "MENU": {
+      "TEXT": "菜单"
+    },
+    "DASHBOARDS": {
+      "TEXT": "大纲"
+    },
+    "LAYOUTS": {
+      "TEXT": "布局",
+      "LIST": {
+        "HORIZONTAL": "水平",
+        "LIGHTSIDEBAR": "单边",
+        "COMPACTSIDEBAR": "Compact Sidebar",
+        "ICONSIDEBAR": "Icons Sidebar",
+        "BOXED": "Boxed Layout",
+        "COLOREDSIDEBAR": "Colored Sidebar",
+        "VERTICAL": "Vertical",
+        "LIGHTTOPBAR": "Light Topbar",
+        "COLOREDHEADER": "Colored Header"
+      }
+    },
+    "APPS": {
+      "TEXT": "Apps"
+    },
+    "CALENDAR": {
+      "TEXT": "日历"
+    },
+    "CHAT": {
+      "TEXT": "聊天",
+      "BADGE": "新建"
+    },
+    "ECOMMERCE": {
+      "TEXT": "商业",
+      "LIST": {
+        "PRODUCTS": "产品",
+        "PRODUCTDETAIL": "产品详情",
+        "ORDERS": "订单",
+        "CUSTOMERS": "客户",
+        "CART": "物流",
+        "CHECKOUT": "结账",
+        "SHOPS": "商店",
+        "ADDPRODUCT": "添加产品"
+      }
+    },
+    "EMAIL": {
+      "TEXT": "Email",
+      "LIST": {
+        "INBOX": "Inbox",
+        "READEMAIL": "Read Email"
+      }
+    },
+    "KANBAN": {
+      "TEXT": "看板"
+    },
+    "PAGES": {
+      "TEXT": "页面"
+    },
+    "AUTHENTICATION": {
+      "TEXT": "认证",
+      "LIST": {
+        "LOGIN": "登录",
+        "REGISTER": "注册",
+        "RECOVERPWD": "重置密码",
+        "LOCKSCREEN": "锁屏"
+      }
+    },
+    "BASE_RESOURCE": {
+      "TEXT": "基础资源",
+      "LIST": {
+        "USER": "用户",
+        "ROLE": "角色",
+        "Resource": "资源"
+      }
+    },
+    "UTILITY": {
+      "TEXT": "Utility",
+      "LIST": {
+        "STARTER": "Starter Page",
+        "MAINTENANCE": "Maintenance",
+        "TIMELINE": "Timeline",
+        "COOMINGSOON": "Cooming Soon",
+        "FAQS": "FAQs",
+        "PRICING": "Pricing",
+        "ERROR404": "Error 404",
+        "ERROR500": "Error 500"
+      }
+    },
+    "COMPONENTS": {
+      "TEXT": "组件"
+    },
+    "UIELEMENTS": {
+      "TEXT": "UI组件",
+      "LIST": {
+        "ALERTS": "弹出框",
+        "BUTTONS": "按钮",
+        "CARDS": "卡片",
+        "CAROUSEL": "轮播",
+        "DROPDOWNS": "下拉",
+        "GRID": "表单",
+        "IMAGES": "图片",
+        "MODALS": "模态框",
+        "RANGESLIDER": "Range Slider",
+        "PROGRESSBAR": "进度条",
+        "SWEETALERT": "友好提示",
+        "TABS": "Tabs & Accordions",
+        "TYPOGRAPHY": "Typography",
+        "VIDEO": "视频",
+        "GENERAL": "常规"
+      }
+    },
+    "FORMS": {
+      "TEXT": "表单",
+      "BADGE": "8",
+      "LIST": {
+        "ELEMENTS": "元素",
+        "VALIDATION": "校验",
+        "ADVANCED": "高级",
+        "EDITOR": "编辑",
+        "FILEUPLOAD": "文件上传",
+        "REPEATER": "重复",
+        "WIZARD": "导航",
+        "MASK": "遮罩"
+      }
+    },
+    "TABLES": {
+      "TEXT": "表格",
+      "LIST": {
+        "BASIC": "基础表格",
+        "ADVANCED": "高级表格"
+      }
+    },
+    "CHARTS": {
+      "TEXT": "Charts",
+      "LIST": {
+        "APEX": "Apex Chart",
+        "CHARTJS": "Chartjs Chart",
+        "CHARTIST": "Chartist Chart",
+        "ECHART": "E Chart"
+      }
+    },
+    "ICONS": {
+      "TEXT": "图标",
+      "LIST": {
+        "REMIX": "Boxicons",
+        "MATERIALDESIGN": "Material Design",
+        "DRIPICONS": "Dripicons",
+        "FONTAWESOME": "Font awesome 5"
+      }
+    },
+    "MAPS": {
+      "TEXT": "Maps",
+      "LIST": {
+        "LEAFLET": "Leaflet Maps",
+        "GOOGLEMAP": "Google Maps"
+      }
+    },
+    "MULTILEVEL": {
+      "TEXT": "Multi Level",
+      "LIST": {
+        "LEVEL1": {
+          "1": "Level 1.1",
+          "2": "Level 1.2",
+          "LEVEL2": {
+            "1": "Level 2.1",
+            "2": "Level 2.2"
+          }
+        }
+      }
+    }
+  }
+}

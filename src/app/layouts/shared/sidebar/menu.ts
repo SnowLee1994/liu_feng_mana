@@ -10,17 +10,32 @@ export const MENU: MenuItem[] = [
         id: 2,
         label: 'MENUITEMS.DASHBOARDS.TEXT',
         icon: 'ri-dashboard-line',
-        badge: {
-            variant: 'success',
-            text: 'MENUITEMS.DASHBOARDS.BADGE',
-        },
         link: '/'
     },
     {
-        id: 3,
-        label: 'MENUITEMS.CALENDAR.TEXT',
-        icon: 'ri-calendar-2-line',
-        link: '/calendar'
+      id: 3,
+      label: 'MENUITEMS.BASE_RESOURCE.TEXT',
+      icon: 'ri-account-circle-line',
+      subItems: [
+        {
+          id: 75,
+          label: 'MENUITEMS.BASE_RESOURCE.LIST.USER',
+          link: '/base/user',
+          parentId: 3
+        },
+        {
+          id: 76,
+          label: 'MENUITEMS.BASE_RESOURCE.LIST.ROLE',
+          link: '/ecommerce/customers',
+          parentId: 3
+        },
+        {
+          id: 77,
+          label: 'MENUITEMS.BASE_RESOURCE.LIST.Resource',
+          link: '/ecommerce/customers',
+          parentId: 3
+        }
+        ]
     },
     {
         id: 4,
@@ -477,5 +492,11 @@ export const MENU: MenuItem[] = [
                 ]
             },
         ]
+    },
+    {
+      id: 74,
+      label: 'MENUITEMS.CALENDAR.TEXT',
+      icon: 'ri-calendar-2-line',
+      link: '/calendar'
     }
 ];

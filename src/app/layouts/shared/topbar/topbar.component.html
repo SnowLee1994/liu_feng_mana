@@ -23,7 +23,7 @@
       </div>
 
       <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn"
-        (click)="toggleMobileMenu($event)">
+              (click)="toggleMobileMenu($event)">
         <i class="ri-menu-2-line align-middle"></i>
       </button>
 
@@ -37,7 +37,7 @@
 
       <div class="dropdown dropdown-mega d-none d-lg-block ml-2" ngbDropdown>
         <button ngbDropdownToggle type="button" class="btn header-item waves-effect" data-toggle="dropdown"
-          aria-haspopup="false" aria-expanded="false">
+                aria-haspopup="false" aria-expanded="false">
           {{ 'HEADER.MEGA_MENU' | translate}}
           <i class="mdi mdi-chevron-down"></i>
         </button>
@@ -171,11 +171,11 @@
 
       <div class="dropdown d-inline-block d-lg-none ml-2" ngbDropdown>
         <button type="button" ngbDropdownToggle class="btn header-item noti-icon waves-effect"
-          id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="ri-search-line"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-          aria-labelledby="page-header-search-dropdown" ngbDropdownMenu>
+             aria-labelledby="page-header-search-dropdown" ngbDropdownMenu>
 
           <form class="p-3">
             <div class="form-group m-0">
@@ -193,22 +193,22 @@
       <div class="dropdown d-inline-block" ngbDropdown>
         <button type="button" class="btn header-item" id="page-header-user-dropdown" ngbDropdownToggle>
           <img *ngIf="flagvalue !== undefined" src="{{flagvalue}}" alt="Header Language" height="16"> <span
-            class="ml-1">{{countryName}}</span>
+          class="ml-1">{{countryName}}</span>
           <img *ngIf="flagvalue === undefined" src="{{valueset}}" alt="Header Language" height="16">
           <span *ngIf="flagvalue === undefined" class="ml-1">English</span>
         </button>
         <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
           <!-- item-->
           <a href="javascript:void(0);" class="dropdown-item notify-item" *ngFor="let item of listLang"
-            (click)="setLanguage(item.text, item.lang, item.flag)" [ngClass]="{'active': cookieValue === item.lang}">
+             (click)="setLanguage(item.text, item.lang, item.flag)" [ngClass]="{'active': cookieValue === item.lang}">
             <img src="{{item.flag}}" alt="user-image" class="mr-1" height="12"> <span
-              class="align-middle">{{item.text}}</span>
+            class="align-middle">{{item.text}}</span>
           </a>
           <!-- item-->
         </div>
       </div>
 
-      <div class="dropdown d-none d-lg-inline-block ml-1" ngbDropdown>
+      <!--<div class="dropdown d-none d-lg-inline-block ml-1" ngbDropdown>
         <button type="button" ngbDropdownToggle class="btn header-item noti-icon waves-effect" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <i class="ri-apps-2-line"></i>
@@ -258,7 +258,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
 
       <div class="dropdown d-none d-lg-inline-block ml-1">
         <button type="button" class="btn header-item noti-icon waves-effect" (click)="fullscreen()">
@@ -268,12 +268,13 @@
 
       <div class="dropdown d-inline-block" ngbDropdown>
         <button type="button" ngbDropdownToggle class="btn header-item noti-icon waves-effect"
-          id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
           <i class="ri-notification-3-line"></i>
           <span class="noti-dot"></span>
         </button>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" ngbDropdownMenu
-          aria-labelledby="page-header-notifications-dropdown">
+             aria-labelledby="page-header-notifications-dropdown">
           <div class="p-3">
             <div class="row align-items-center">
               <div class="col">
@@ -310,7 +311,7 @@
                   <div class="font-size-12 text-muted">
                     <p class="mb-1">{{ 'HEADER.NOTIFICATIONS.SECOND.TEXT' | translate}}</p>
                     <p class="mb-0"><i
-                        class="mdi mdi-clock-outline"></i>{{ 'HEADER.NOTIFICATIONS.SECOND.TIME' | translate}}</p>
+                      class="mdi mdi-clock-outline"></i>{{ 'HEADER.NOTIFICATIONS.SECOND.TIME' | translate}}</p>
                   </div>
                 </div>
               </div>
@@ -327,7 +328,7 @@
                   <div class="font-size-12 text-muted">
                     <p class="mb-1">{{ 'HEADER.NOTIFICATIONS.THIRD.TEXT' | translate}}</p>
                     <p class="mb-0"><i
-                        class="mdi mdi-clock-outline"></i>{{ 'HEADER.NOTIFICATIONS.THIRD.TIME' | translate}}</p>
+                      class="mdi mdi-clock-outline"></i>{{ 'HEADER.NOTIFICATIONS.THIRD.TIME' | translate}}</p>
                   </div>
                 </div>
               </div>
@@ -340,7 +341,7 @@
                   <div class="font-size-12 text-muted">
                     <p class="mb-1">{{ 'HEADER.NOTIFICATIONS.FOUR.TEXT' | translate}}</p>
                     <p class="mb-0"><i
-                        class="mdi mdi-clock-outline"></i>{{ 'HEADER.NOTIFICATIONS.FOUR.TIME' | translate}}</p>
+                      class="mdi mdi-clock-outline"></i>{{ 'HEADER.NOTIFICATIONS.FOUR.TIME' | translate}}</p>
                   </div>
                 </div>
               </div>
@@ -356,9 +357,9 @@
 
       <div class="dropdown d-inline-block user-dropdown" ngbDropdown>
         <button type="button" ngbDropdownToggle class="btn header-item waves-effect" id="page-header-user-dropdown"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-2.jpg" alt="Header Avatar">
-          <span class="d-none d-xl-inline-block ml-1">Kevin</span>
+          <span class="d-none d-xl-inline-block ml-1">Snow</span>
           <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
         </button>
 
@@ -367,22 +368,22 @@
           <a class="dropdown-item" href="javascript: void(0);"><i class="ri-user-line align-middle mr-1"></i>
             {{ 'HEADER.LOGIN.PROFILE' | translate}}</a>
           <a class="dropdown-item" href="javascript: void(0);"><i
-              class="ri-wallet-2-line align-middle mr-1"></i>{{ 'HEADER.LOGIN.MY_WALLET' | translate}}</a>
+            class="ri-wallet-2-line align-middle mr-1"></i>{{ 'HEADER.LOGIN.MY_WALLET' | translate}}</a>
           <a class="dropdown-item d-block" href="javascript: void(0);"><span
-              class="badge badge-success float-right mt-1">11</span><i
-              class="ri-settings-2-line align-middle mr-1"></i>{{ 'HEADER.LOGIN.SETTINGS' | translate}} </a>
+            class="badge badge-success float-right mt-1">11</span><i
+            class="ri-settings-2-line align-middle mr-1"></i>{{ 'HEADER.LOGIN.SETTINGS' | translate}} </a>
           <a class="dropdown-item" href="javascript: void(0);"><i class="ri-lock-unlock-line align-middle mr-1"></i>
             {{ 'HEADER.LOGIN.LOCK_SCREEN' | translate}}</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item text-danger" href="javascript: void(0);" (click)="logout()"><i
-              class="ri-shut-down-line align-middle mr-1 text-danger"></i>
+            class="ri-shut-down-line align-middle mr-1 text-danger"></i>
             {{ 'HEADER.LOGIN.LOGOUT' | translate}}</a>
         </div>
       </div>
 
       <div class="dropdown d-inline-block">
         <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect"
-          (click)="toggleRightSidebar()">
+                (click)="toggleRightSidebar()">
           <i class="ri-settings-2-line"></i>
         </button>
       </div>
