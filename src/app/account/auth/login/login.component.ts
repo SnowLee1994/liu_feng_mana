@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     document.body.classList.add('auth-body-bg');
 
     this.loginForm = this.formBuilder.group({
-      username: ['snow', [Validators.required]],
+      username: ['guest', [Validators.required]],
       password: ['123456', [Validators.required]],
     });
 

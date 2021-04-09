@@ -20,6 +20,7 @@ export class TopbarComponent implements OnInit {
   cookieValue;
   flagvalue;
   countryName;
+  lang;
   valueset: string;
 
   listLang = [
@@ -32,7 +33,12 @@ export class TopbarComponent implements OnInit {
   ];
 
   // tslint:disable-next-line: max-line-length
-  constructor(@Inject(DOCUMENT) private document: any, private router: Router, private authService: AuthenticationService, private authFackservice: AuthfakeauthenticationService, public languageService: LanguageService, public cookiesService: CookieService) {
+  constructor(@Inject(DOCUMENT) private document: any,
+              private router: Router,
+              private authService: AuthenticationService,
+              private authFackservice: AuthfakeauthenticationService,
+              public languageService: LanguageService,
+              public cookiesService: CookieService) {
   }
 
   @Output() mobileMenuButtonClicked = new EventEmitter();
@@ -52,8 +58,12 @@ export class TopbarComponent implements OnInit {
       if (this.flagvalue === undefined) {
         this.valueset = 'assets/images/flags/cn.jpg';
       }
+      //默认设置中文
+      this.setLanguage('中文','cn',this.valueset);
     } else {
       this.flagvalue = val.map(element => element.flag);
+      this.lang = val.map(element => element.lang);
+      this.setLanguage(this.countryName,this.lang,this.flagvalue);
     }
   }
 

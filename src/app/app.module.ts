@@ -21,6 +21,7 @@ import {UserComponent} from './pages/base/user/user.component';
 import {UiModule} from './shared/ui/ui.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {HttpInterceptor} from './shared/entity/http.interceptor';
 
 if (environment.defaultauth === 'firebase') {
   initFirebaseBackend(environment.firebaseConfig);
@@ -59,6 +60,11 @@ export function createTranslateLoader(http: HttpClient): any {
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true},
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptor,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })

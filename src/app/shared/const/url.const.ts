@@ -2,8 +2,8 @@
  *  服务端api接口地址常量
  */
 export const URL = {
-  do_login: 'test/login',
-  register: 'test/regist',
+  do_login: 'login',
+  register: 'regist',
   get_user_info: 'gjmes/findUserInfo.do?empNo=',
 
   //用户管理
