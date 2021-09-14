@@ -7,6 +7,7 @@ import {AuthenticationService} from '../../../core/services/auth.service';
 import {AuthfakeauthenticationService} from '../../../core/services/authfake.service';
 import {LanguageService} from '../../../core/services/language.service';
 import {environment} from '../../../../environments/environment';
+import {USER} from '../../../global.const';
 
 @Component({
   selector: 'app-topbar',
@@ -22,6 +23,7 @@ export class TopbarComponent implements OnInit {
   countryName;
   lang;
   valueset: string;
+  loginUser: any;
 
   listLang = [
     {text: '中文', flag: 'assets/images/flags/cn.jpg', lang: 'cn'},
@@ -32,7 +34,6 @@ export class TopbarComponent implements OnInit {
     {text: 'Russian', flag: 'assets/images/flags/russia.jpg', lang: 'ru'},
   ];
 
-  // tslint:disable-next-line: max-line-length
   constructor(@Inject(DOCUMENT) private document: any,
               private router: Router,
               private authService: AuthenticationService,
@@ -46,6 +47,7 @@ export class TopbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.element = document.documentElement;
+    this.loginUser = USER.username;
     this.configData = {
       suppressScrollX: true,
       wheelSpeed: 0.3

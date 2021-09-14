@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
         // 保存token
         if (r.success) {
           USER.token = r.data;
+          USER.username = this.loginForm.get('username').value;
           // 请求用户信息
           this.routerSV.to('/');
         } else {
