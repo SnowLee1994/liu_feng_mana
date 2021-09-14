@@ -12,5 +12,12 @@ export const URL = {
   user_add: 'user/add',
   user_delete: 'user/delete',
   user_find_by_id: 'user/getUserById',
-  user_update: 'user/edit'
+  user_update: 'user/edit',
+
+  //角色管理
+  role_find_roles_page:'role/roleListByPage',
+  role_find_by_id: 'role/getRoleById',
+  role_add: 'role/add',
+  role_update: 'role/edit',
+  role_delete: 'role/delete',
 };

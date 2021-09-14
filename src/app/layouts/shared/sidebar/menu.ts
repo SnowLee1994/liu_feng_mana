@@ -26,7 +26,7 @@ export const MENU: MenuItem[] = [
         {
           id: 76,
           label: 'MENUITEMS.BASE_RESOURCE.LIST.ROLE',
-          link: '/ecommerce/customers',
+          link: '/base/role',
           parentId: 3
         },
         {

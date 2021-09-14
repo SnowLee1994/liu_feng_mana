@@ -5,11 +5,9 @@ import {Httpbase} from '../../../shared/service/httpbase';
 import {RouterService} from '../../../shared/service/router.service';
 import {RETURN} from '../../../shared/utils/return.util';
 import {URL} from '../../../shared/const/url.const';
-import {ROUTE} from '../../../shared/const/route.enum';
 import {USER} from '../../../global.const';
 import {NEXT} from '../../../shared/utils/next.util';
 import {HttpNext} from '../../../shared/entity/httpNext';
-import {userDataBo} from '../../../shared/entity/user-data.bo';
 
 @Injectable({
     providedIn: 'root'
