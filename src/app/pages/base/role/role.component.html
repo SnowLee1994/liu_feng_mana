@@ -16,7 +16,6 @@
               <thead class="thead-light">
               <tr>
                 <th>名称</th>
-                <!--                <th>密码</th>-->
                 <th>备注</th>
                 <th>创建日期</th>
                 <th style="width: 120px;">操作</th>
@@ -26,7 +25,6 @@
               <tr *ngFor="let item of customersData; let i= index">
                 <td hidden>{{item.id}}</td>
                 <td>{{item.name}}</td>
-                <!--                <td>{{item.password}}</td>-->
                 <td>{{item.memo}}</td>
                 <td>{{item.createDate}}</td>
                 <td>
@@ -52,10 +50,10 @@
   </div>
 </div>
 
-<!-- 新增用户  -->
+<!-- 新增角色  -->
 <ng-template #addContent role="document" let-modal="close">
   <div class="modal-header">
-    <h5 class="modal-title">添加用户</h5>
+    <h5 class="modal-title">添加角色</h5>
     <button type="button" class="close" aria-label="Close" (click)="modal('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -64,38 +62,16 @@
     <div class="text-left">
       <form (ngSubmit)="saveData()" [formGroup]="addform">
         <div class="form-group">
-          <label for="username">用户名</label>
-          <input type="text" class="form-control" id="username" placeholder="输入用户名" formControlName="username"
-                 [ngClass]="{'is-invalid': submitted && form.username.errors}">
-          <div *ngIf="submitted && form.username.errors" class="invalid-feedback">
-            <span *ngIf="form.username.errors.required">用户名不可为空</span>
+          <label for="name">名称</label>
+          <input type="text" class="form-control" id="name" placeholder="输入角色名称" formControlName="name"
+                 [ngClass]="{'is-invalid': submitted && form.name.errors}">
+          <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+            <span *ngIf="form.name.errors.required">角色名称不可为空</span>
           </div>
         </div>
         <div class="form-group">
-          <label for="password">密码</label>
-          <input type="text" class="form-control" id="password" placeholder="输入密码" formControlName="password"
-                 [ngClass]="{'is-invalid': submitted && form.password.errors}">
-          <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
-            <span *ngIf="form.password.errors.required">密码不可为空</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>手机 </label>
-          <input type="number" class="form-control" placeholder="输入手机号" formControlName="phone"
-                 [ngClass]="{'is-invalid': submitted && form.phone.errors}" minlength="10">
-          <div *ngIf="submitted && form.phone.errors" class="invalid-feedback">
-            <span *ngIf="form.phone.errors.required">手机号不可为空</span>
-            <span *ngIf="form.phone.errors.minlength">手机号必须是10位</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">邮箱</label>
-          <input class="form-control" id="email" placeholder="输入邮箱" formControlName="email"
-                 [ngClass]="{'is-invalid': submitted && form.email.errors}">
-          <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
-            <span *ngIf="form.email.errors.required">邮箱不可为空</span>
-            <span *ngIf="form.email.errors.pattern">请输入合法邮箱</span>
-          </div>
+          <label for="name">备注</label>
+          <input type="text" class="form-control" id="memo" placeholder="输入备注" formControlName="memo">
         </div>
         <div class="text-right">
           <button type="submit" class="btn btn-success">保存</button>
@@ -106,10 +82,10 @@
   </div>
 </ng-template>
 
-<!-- 编辑用户  -->
+<!-- 编辑角色  -->
 <ng-template #editContent role="document" let-modal="close">
   <div class="modal-header">
-    <h5 class="modal-title">编辑用户</h5>
+    <h5 class="modal-title">编辑角色</h5>
     <button type="button" class="close" aria-label="Close" (click)="modal('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -118,41 +94,19 @@
     <div class="text-left">
       <form (ngSubmit)="saveUpdate()" [formGroup]="editform">
         <div class="form-group" hidden>
-          <input type="text" class="form-control" id="id" placeholder="用户名ID" formControlName="id">
+          <input type="text" class="form-control" id="id" placeholder="角色ID" formControlName="id">
         </div>
         <div class="form-group">
-          <label for="username">用户名</label>
-          <input type="text" class="form-control" id="username" placeholder="输入用户名" formControlName="username"
-                 [ngClass]="{'is-invalid': submitted && editForm.username.errors}" readonly>
-          <div *ngIf="submitted && editForm.username.errors" class="invalid-feedback">
-            <span *ngIf="editForm.username.errors.required">用户名不可为空</span>
+          <label for="name">角色名称</label>
+          <input type="text" class="form-control" id="name" placeholder="角色名称" formControlName="name"
+                 [ngClass]="{'is-invalid': submitted && editForm.name.errors}" readonly>
+          <div *ngIf="submitted && editForm.name.errors" class="invalid-feedback">
+            <span *ngIf="editForm.name.errors.required">角色名称不可为空</span>
           </div>
         </div>
         <div class="form-group">
-          <label for="password">密码</label>
-          <input type="text" class="form-control" id="password" placeholder="输入密码" formControlName="password"
-                 [ngClass]="{'is-invalid': submitted && editForm.password.errors}">
-          <div *ngIf="submitted && editForm.password.errors" class="invalid-feedback">
-            <span *ngIf="editForm.password.errors.required">密码不可为空</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>手机 </label>
-          <input type="number" class="form-control" placeholder="输入手机号" formControlName="phone"
-                 [ngClass]="{'is-invalid': submitted && editForm.phone.errors}" minlength="10">
-          <div *ngIf="submitted && editForm.phone.errors" class="invalid-feedback">
-            <span *ngIf="editForm.phone.errors.required">手机号不可为空</span>
-            <span *ngIf="editForm.phone.errors.minlength">手机号必须是10位</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">邮箱</label>
-          <input class="form-control" id="email" placeholder="输入邮箱" formControlName="email"
-                 [ngClass]="{'is-invalid': submitted && editForm.email.errors}">
-          <div *ngIf="submitted && editForm.email.errors" class="invalid-feedback">
-            <span *ngIf="editForm.email.errors.required">邮箱不可为空</span>
-            <span *ngIf="editForm.email.errors.pattern">请输入合法邮箱</span>
-          </div>
+          <label for="name">备注</label>
+          <input type="text" class="form-control" id="memo" placeholder="输入备注" formControlName="memo">
         </div>
         <div class="text-right">
           <button type="submit" class="btn btn-success">保存</button>

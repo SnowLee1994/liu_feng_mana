@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../../shared/entity/user.bo';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
@@ -32,18 +31,14 @@ export class RoleComponent implements OnInit {
     this.breadCrumbItems = [{label: '基础资源'}, {label: '角色管理', active: true}];
 
     this.addform = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      name: ['', [Validators.required]],
+      memo: ['', []],
     });
 
     this.editform = this.formBuilder.group({
       id: ['', [Validators.required]],
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      name: ['', [Validators.required]],
+      memo: ['', []],
     });
 
     this._fetchData(this.pageNum, this.pageSize);
