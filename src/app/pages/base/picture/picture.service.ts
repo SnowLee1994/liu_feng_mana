@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
-import {Httpbase} from '../../../shared/service/httpbase';
 import {HttpClient} from '@angular/common/http';
-import {RouterService} from '../../../shared/service/router.service';
 import {Observable} from 'rxjs';
 import {HttpNext} from '../../../shared/entity/httpNext';
 import {URL} from '../../../shared/const/url.const';
 import {NEXT} from '../../../shared/utils/next.util';
+import {Httpbase} from '../../../shared/service/httpbase';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RoleService extends Httpbase{
+export class PictureService extends Httpbase{
 
   constructor(public httpClient: HttpClient,
   ) {
     super(httpClient);
   }
 
-  findRolesByPage(query: any): Observable<HttpNext<any>> {
+  findPicturesByPage(query: any): Observable<HttpNext<any>> {
     return new Observable<any>(o => {
-      this.post(URL.role_find_roles_page, query).subscribe(r => {
+      this.post(URL.picture_find_roles_page, query).subscribe(r => {
         NEXT.data(o, r);
       });
     });

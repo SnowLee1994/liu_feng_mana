@@ -1,0 +1,122 @@
+<div class="container-fluid">
+  <app-pagetitle title="图片管理" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <a class="btn btn-success mb-2" (click)="openAddModal(addContent)">
+              <i class="mdi mdi-plus mr-2"></i> 添加图片
+            </a>
+          </div>
+          <div class="table-responsive mt-3">
+            <table class="table table-centered datatable dt-responsive nowrap"
+                   style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+              <thead class="thead-light">
+              <tr>
+                <th>名称</th>
+                <th>图片</th>
+                <th>标签</th>
+                <th>描述</th>
+                <th>创建日期</th>
+                <th style="width: 120px;">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of customersData; let i= index">
+                <td hidden>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.url}}</td>
+                <td>{{item.tag}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.createDate}}</td>
+                <td>
+                  <a class="mr-3 text-primary" v-b-tooltip.hover title="编辑"
+                     (click)="openEditModal(editContent,item.id)">
+                    <i class="mdi mdi-pencil font-size-18"></i>
+                  </a>
+                  <a class="text-danger" v-b-tooltip.hover title="删除" (click)="cancel(item.id)">
+                    <i class="mdi mdi-trash-can font-size-18"></i>
+                  </a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <ngb-pagination class="d-flex justify-content-start" [collectionSize]="collectionSize"
+                            [(page)]="pageNum" [(pageSize)]="pageSize" (pageChange)="refresh(pageNum)"></ngb-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 新增图片  -->
+<ng-template #addContent role="document" let-modal="close">
+  <div class="modal-header">
+    <h5 class="modal-title">添加图片</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body p-3">
+    <div class="text-left">
+      <form (ngSubmit)="saveData()" [formGroup]="addform">
+        <div class="form-group">
+          <label for="name">名称</label>
+          <input type="text" class="form-control" id="name" placeholder="输入图片名称" formControlName="name"
+                 [ngClass]="{'is-invalid': submitted && form.name.errors}">
+          <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+            <span *ngIf="form.name.errors.required">图片名称不可为空</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">备注</label>
+          <input type="text" class="form-control" id="memo" placeholder="输入备注" formControlName="memo">
+        </div>
+        <div class="text-right">
+          <button type="submit" class="btn btn-success">保存</button>
+          <button type="button" class="btn btn-danger ml-1" (click)="modal('close click')">取消</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>
+
+<!-- 编辑图片  -->
+<ng-template #editContent role="document" let-modal="close">
+  <div class="modal-header">
+    <h5 class="modal-title">编辑图片</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body p-3">
+    <div class="text-left">
+      <form (ngSubmit)="saveUpdate()" [formGroup]="editform">
+        <div class="form-group" hidden>
+          <input type="text" class="form-control" id="id" placeholder="图片ID" formControlName="id">
+        </div>
+        <div class="form-group">
+          <label for="name">图片名称</label>
+          <input type="text" class="form-control" id="name" placeholder="图片名称" formControlName="name"
+                 [ngClass]="{'is-invalid': submitted && editForm.name.errors}" readonly>
+          <div *ngIf="submitted && editForm.name.errors" class="invalid-feedback">
+            <span *ngIf="editForm.name.errors.required">图片名称不可为空</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">备注</label>
+          <input type="text" class="form-control" id="memo" placeholder="输入备注" formControlName="memo">
+        </div>
+        <div class="text-right">
+          <button type="submit" class="btn btn-success">保存</button>
+          <button type="button" class="btn btn-danger ml-1" (click)="modal('close click')">取消</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>

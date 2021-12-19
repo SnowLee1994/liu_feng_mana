@@ -20,4 +20,7 @@ export const URL = {
   role_add: 'role/add',
   role_update: 'role/edit',
   role_delete: 'role/delete',
+
+  //图片管理
+  picture_find_roles_page:'picture/listByPage',
 };

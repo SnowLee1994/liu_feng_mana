@@ -136,7 +136,8 @@
       "LIST": {
         "USER": "用户",
         "ROLE": "角色",
-        "Resource": "资源"
+        "Resource": "资源",
+        "Picture": "图片"
       }
     },
     "UTILITY": {

@@ -34,6 +34,12 @@ export const MENU: MenuItem[] = [
           label: 'MENUITEMS.BASE_RESOURCE.LIST.Resource',
           link: '/ecommerce/customers',
           parentId: 3
+        },
+        {
+          id: 78,
+          label: 'MENUITEMS.BASE_RESOURCE.LIST.Picture',
+          link: '/base/picture',
+          parentId: 3
         }
         ]
     },
